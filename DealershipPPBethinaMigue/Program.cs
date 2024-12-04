@@ -11,7 +11,7 @@ List<BookModel> bookList = new List<BookModel>();
 //        "In the house of Helios, god of the sun and mightiest of the Titans, a daughter is born. "),
 //};
 
-Console.Write("Welcome to your personal book app!");
+Console.Write("Welcome to your personal book app!\n\n");
 bool isChoosing = true;
 while (isChoosing)
 {
@@ -20,16 +20,22 @@ while (isChoosing)
     switch (userChoice)
     {
         case "1":
+            Console.Clear();
             CreateNewBook();
             break;
         case "2":
+            Console.Clear();
             DoWeHaveBooks(bookList);
             break;
         case "3":
+            Console.Clear();
             Environment.Exit(0);
             break;
         default:
+            Console.Clear();
             Console.WriteLine("Invalid choice.");
+            Thread.Sleep(2000);
+            Console.Clear();
             break;
     }
 }
@@ -47,7 +53,8 @@ void DoWeHaveBooks(List<BookModel> listOfBooks)
 {
     if (listOfBooks.Count == 0)
     {
-        Console.WriteLine("There are no books in your library.");
+        Console.WriteLine("There are no books in your library.\n\n");
+        Thread.Sleep(2000);
     }
     else
     {
@@ -64,4 +71,3 @@ void ShowBookList(List<BookModel> listOfBooks)
 }
 
 Console.ReadLine();
-
